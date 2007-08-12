@@ -1,0 +1,1220 @@
+<html>
+<head>
+<title>Docs For Class PcpinTpl</title>
+<link rel="stylesheet" type="text/css" href="../media/style.css">
+</head>
+<body>
+
+<table border="0" cellspacing="0" cellpadding="0" height="48" width="100%">
+  <tr>
+    <td class="header_top">PcpinTpl</td>
+  </tr>
+  <tr><td class="header_line"><img src="../media/empty.png" width="1" height="1" border="0" alt=""  /></td></tr>
+  <tr>
+    <td class="header_menu">
+        
+                                    
+                              		  [ <a href="../classtrees_PcpinTpl.html" class="menu">class tree: PcpinTpl</a> ]
+		  [ <a href="../elementindex_PcpinTpl.html" class="menu">index: PcpinTpl</a> ]
+		  	    [ <a href="../elementindex.html" class="menu">all elements</a> ]
+    </td>
+  </tr>
+  <tr><td class="header_line"><img src="../media/empty.png" width="1" height="1" border="0" alt=""  /></td></tr>
+</table>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="200" class="menu">
+      <b>Packages:</b><br />
+              <a href="../li_PcpinTpl.html">PcpinTpl</a><br />
+            <br /><br />
+                        <b>Files:</b><br />
+      	  <div class="package">
+			<a href="../PcpinTpl/_pcpintpl.class.php.html">		pcpintpl.class.php
+		</a><br>
+	  </div><br />
+      
+      
+            <b>Classes:</b><br />
+        <div class="package">
+		    		<a href="../PcpinTpl/PcpinTpl.html">PcpinTpl</a><br />
+	  </div>
+                </td>
+    <td>
+      <table cellpadding="10" cellspacing="0" width="100%" border="0"><tr><td valign="top">
+
+<h1>Class: PcpinTpl</h1>
+Source Location: /pcpintpl.class.php<br /><br />
+
+
+<table width="100%" border="0">
+<tr><td valign="top">
+
+<h3><a href="#class_details">Class Overview</a></h3>
+<pre></pre><br />
+<div class="description">Class PcpinTpl</div><br /><br />
+
+
+
+
+
+
+        
+</td>
+
+<td valign="top">
+<h3><a href="#class_vars">Variables</a></h3>
+<ul>
+    <li><a href="../PcpinTpl/PcpinTpl.html#var$basedir">$basedir</a></li>
+    <li><a href="../PcpinTpl/PcpinTpl.html#var$files">$files</a></li>
+    <li><a href="../PcpinTpl/PcpinTpl.html#var$global_vars">$global_vars</a></li>
+    <li><a href="../PcpinTpl/PcpinTpl.html#var$last_error">$last_error</a></li>
+    <li><a href="../PcpinTpl/PcpinTpl.html#var$parsed_name_flags">$parsed_name_flags</a></li>
+    <li><a href="../PcpinTpl/PcpinTpl.html#var$parsed_name_ref">$parsed_name_ref</a></li>
+    <li><a href="../PcpinTpl/PcpinTpl.html#var$sub_name_ref">$sub_name_ref</a></li>
+    <li><a href="../PcpinTpl/PcpinTpl.html#var$tpl_depth">$tpl_depth</a></li>
+    <li><a href="../PcpinTpl/PcpinTpl.html#var$tpl_name_ref">$tpl_name_ref</a></li>
+    <li><a href="../PcpinTpl/PcpinTpl.html#var$tpl_struct">$tpl_struct</a></li>
+    <li><a href="../PcpinTpl/PcpinTpl.html#var$tpl_vars">$tpl_vars</a></li>
+    <li><a href="../PcpinTpl/PcpinTpl.html#var$tpl_vars_plain">$tpl_vars_plain</a></li>
+  </ul>
+</td>
+
+
+<td valign="top">
+<h3><a href="#class_methods">Methods</a></h3>
+<ul>
+    <li><a href="../PcpinTpl/PcpinTpl.html#methodPcpinTpl">PcpinTpl</a></li>
+    <li><a href="../PcpinTpl/PcpinTpl.html#methodaddGlobalVar">addGlobalVar</a></li>
+    <li><a href="../PcpinTpl/PcpinTpl.html#methodaddGlobalVars">addGlobalVars</a></li>
+    <li><a href="../PcpinTpl/PcpinTpl.html#methodaddVar">addVar</a></li>
+    <li><a href="../PcpinTpl/PcpinTpl.html#methodaddVars">addVars</a></li>
+    <li><a href="../PcpinTpl/PcpinTpl.html#methodcharacterData">characterData</a></li>
+    <li><a href="../PcpinTpl/PcpinTpl.html#methodclearTemplate">clearTemplate</a></li>
+    <li><a href="../PcpinTpl/PcpinTpl.html#methoddisplayParsedTemplate">displayParsedTemplate</a></li>
+    <li><a href="../PcpinTpl/PcpinTpl.html#methodendElement">endElement</a></li>
+    <li><a href="../PcpinTpl/PcpinTpl.html#methodgetFileContents">getFileContents</a></li>
+    <li><a href="../PcpinTpl/PcpinTpl.html#methodgetLastError">getLastError</a></li>
+    <li><a href="../PcpinTpl/PcpinTpl.html#methodgetLastFileData">getLastFileData</a></li>
+    <li><a href="../PcpinTpl/PcpinTpl.html#methodgetLineNumber">getLineNumber</a></li>
+    <li><a href="../PcpinTpl/PcpinTpl.html#methodgetParsedTemplate">getParsedTemplate</a></li>
+    <li><a href="../PcpinTpl/PcpinTpl.html#methodmakeRefs">makeRefs</a></li>
+    <li><a href="../PcpinTpl/PcpinTpl.html#methodparseIntoString">parseIntoString</a></li>
+    <li><a href="../PcpinTpl/PcpinTpl.html#methodparseIntoStruct">parseIntoStruct</a></li>
+    <li><a href="../PcpinTpl/PcpinTpl.html#methodparseTemplate">parseTemplate</a></li>
+    <li><a href="../PcpinTpl/PcpinTpl.html#methodpassVars">passVars</a></li>
+    <li><a href="../PcpinTpl/PcpinTpl.html#methodreadTemplatesFromFile">readTemplatesFromFile</a></li>
+    <li><a href="../PcpinTpl/PcpinTpl.html#methodresetTpl">resetTpl</a></li>
+    <li><a href="../PcpinTpl/PcpinTpl.html#methodsetBasedir">setBasedir</a></li>
+    <li><a href="../PcpinTpl/PcpinTpl.html#methodsetError">setError</a></li>
+    <li><a href="../PcpinTpl/PcpinTpl.html#methodstartElement">startElement</a></li>
+  </ul>
+</td>
+
+</tr></table>
+<hr />
+
+<table width="100%" border="0"><tr>
+
+
+
+
+
+
+</tr></table>
+<hr />
+
+<a name="class_details"></a>
+<h3>Class Details</h3>
+<div class="tags">
+[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a91">91</a>]<br />
+Class PcpinTpl<br /><br /><p>Class PcpinTpl</p><br /></div><br /><br />
+<div class="top">[ <a href="#top">Top</a> ]</div><br />
+
+<hr />
+<a name="class_vars"></a>
+<h3>Class Variables</h3>
+<div class="tags">
+	<a name="var$basedir"></a>
+	<p></p>
+	<h4>$basedir = <span class="value">''</span></h4>
+	<p>[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a103">103</a>]</p>
+  The directory where the template files are stored<br /><br /><p>The directory where the template files are stored</p><br />
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>string</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$files"></a>
+	<p></p>
+	<h4>$files = <span class="value">null</span></h4>
+	<p>[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a109">109</a>]</p>
+  Array with opened files' description (name=&gt;byte_offset)<br /><br /><p>Array with opened files' description (name=&gt;byte_offset)</p><br />
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>array</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$global_vars"></a>
+	<p></p>
+	<h4>$global_vars = <span class="value">null</span></h4>
+	<p>[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a171">171</a>]</p>
+  Global variables.<br /><br /><p>Global variables. These variables are overrided by template variables with the same name.</p><br />
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>array</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$last_error"></a>
+	<p></p>
+	<h4>$last_error = <span class="value">''</span></h4>
+	<p>[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a97">97</a>]</p>
+  Last raised error description<br /><br /><p>Last raised error description</p><br />
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>string</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$parsed_name_flags"></a>
+	<p></p>
+	<h4>$parsed_name_flags = <span class="value">null</span></h4>
+	<p>[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a152">152</a>]</p>
+  Parsed template flags (true, if the template is parsed) The templates are referenced by the value of an attribute &quot;name&quot;.<br /><br /><p>Parsed template flags (true, if the template is parsed) The templates are referenced by the value of an attribute &quot;name&quot;. NOTE: if there are multiple templates with the same, then only the last template will be referenced</p><br />
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>array</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$parsed_name_ref"></a>
+	<p></p>
+	<h4>$parsed_name_ref = <span class="value">null</span></h4>
+	<p>[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a144">144</a>]</p>
+  Parsed template contents The templates are referenced by the value of an attribute &quot;name&quot;.<br /><br /><p>Parsed template contents The templates are referenced by the value of an attribute &quot;name&quot;. NOTE: if there are multiple templates with the same, then only the last template will be referenced</p><br />
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>array</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$sub_name_ref"></a>
+	<p></p>
+	<h4>$sub_name_ref = <span class="value">null</span></h4>
+	<p>[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a136">136</a>]</p>
+  Array with references to the subtemplates.<br /><br /><p>Array with references to the subtemplates. The subtemplates are referenced by the value of an attribute &quot;name&quot; of their parent template.</p><br />
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>array</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$tpl_depth"></a>
+	<p></p>
+	<h4>$tpl_depth = <span class="value">0</span></h4>
+	<p>[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a121">121</a>]</p>
+  Template structure current depth<br /><br /><p>Template structure current depth</p><br />
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>int</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$tpl_name_ref"></a>
+	<p></p>
+	<h4>$tpl_name_ref = <span class="value">null</span></h4>
+	<p>[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a129">129</a>]</p>
+  Array with references to the templates.<br /><br /><p>Array with references to the templates. The templates are referenced by the value of an attribute &quot;name&quot;. NOTE: if there are multiple templates with the same, then only the last template will be referenced</p><br />
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>array</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$tpl_struct"></a>
+	<p></p>
+	<h4>$tpl_struct = <span class="value">null</span></h4>
+	<p>[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a115">115</a>]</p>
+  Template structure<br /><br /><p>Template structure</p><br />
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>array</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$tpl_vars"></a>
+	<p></p>
+	<h4>$tpl_vars = <span class="value">null</span></h4>
+	<p>[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a158">158</a>]</p>
+  Template variables referenced by the template name.<br /><br /><p>Template variables referenced by the template name.</p><br />
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>array</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+	<a name="var$tpl_vars_plain"></a>
+	<p></p>
+	<h4>$tpl_vars_plain = <span class="value">null</span></h4>
+	<p>[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a164">164</a>]</p>
+  All variable names used in all loaded templates<br /><br /><p>All variable names used in all loaded templates</p><br />
+  <br />
+	<div class="tags">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><b>Type:</b>&nbsp;&nbsp;</td>
+      <td>array</td>
+    </tr>
+      </table>
+	</div><br /><br />
+	<div class="top">[ <a href="#top">Top</a> ]</div><br />
+</div><br />
+
+<hr />
+<a name="class_methods"></a>
+<h3>Class Methods</h3>
+<div class="tags">
+
+  <hr />
+	<a name="methodPcpinTpl"></a>
+	<h3>constructor PcpinTpl <span class="smalllinenumber">[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a181">181</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>PcpinTpl PcpinTpl(
+)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Constructor<br /><br /><p>Constructor</p><br /><br /><br />
+
+	
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodaddGlobalVar"></a>
+	<h3>method addGlobalVar <span class="smalllinenumber">[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a874">874</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void addGlobalVar(
+[string
+$var_name = ''], [mixed
+$var_val = null])</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Add a global variable<br /><br /><p>Add a global variable</p><br /><br /><br />
+
+	
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><b>$var_name</b>&nbsp;&nbsp;</td>
+        <td>Variable name</td>
+      </tr>
+          <tr>
+        <td class="type">mixed&nbsp;&nbsp;</td>
+        <td><b>$var_val</b>&nbsp;&nbsp;</td>
+        <td>Variable value</td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodaddGlobalVars"></a>
+	<h3>method addGlobalVars <span class="smalllinenumber">[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a887">887</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void addGlobalVars(
+[array
+$vars = null])</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Add multiple global variables<br /><br /><p>Add multiple global variables The $vars array elements have variable name as KEY and it's value as VAL (KEY=&gt;VAL)</p><br /><br /><br />
+
+	
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">array&nbsp;&nbsp;</td>
+        <td><b>$vars</b>&nbsp;&nbsp;</td>
+        <td>Variables to add</td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodaddVar"></a>
+	<h3>method addVar <span class="smalllinenumber">[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a846">846</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void addVar(
+[string
+$template = ''], [string
+$var_name = ''], [mixed
+$var_val = null])</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Add a variable to the template<br /><br /><p>Add a variable to the template</p><br /><br /><br />
+
+	
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><b>$template</b>&nbsp;&nbsp;</td>
+        <td>Template name</td>
+      </tr>
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><b>$var_name</b>&nbsp;&nbsp;</td>
+        <td>Variable name</td>
+      </tr>
+          <tr>
+        <td class="type">mixed&nbsp;&nbsp;</td>
+        <td><b>$var_val</b>&nbsp;&nbsp;</td>
+        <td>Variable value</td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodaddVars"></a>
+	<h3>method addVars <span class="smalllinenumber">[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a860">860</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void addVars(
+[string
+$template = ''], [array
+$vars = null])</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Add multiple variables to the template.<br /><br /><p>Add multiple variables to the template. The $vars array elements have variable name as KEY and it's value as VAL (KEY=&gt;VAL)</p><br /><br /><br />
+
+	
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><b>$template</b>&nbsp;&nbsp;</td>
+        <td>Template name</td>
+      </tr>
+          <tr>
+        <td class="type">array&nbsp;&nbsp;</td>
+        <td><b>$vars</b>&nbsp;&nbsp;</td>
+        <td>Variables to add</td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodcharacterData"></a>
+	<h3>method characterData <span class="smalllinenumber">[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a668">668</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>boolean characterData(
+
+&$tpl_struct, 
+&$tpl_depth, [string
+$cdata = ''], array
+$tpl_struct, array
+$tpl_depth)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Characted data handler<br /><br /><p>Characted data handler</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>return:</b>&nbsp;&nbsp;</td><td>TRUE on success or FALSE on error</td>
+  </tr>
+</table>
+</div>
+<br /><br />
+
+	
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">array&nbsp;&nbsp;</td>
+        <td><b>$tpl_struct</b>&nbsp;&nbsp;</td>
+        <td>A reference to the template structure array</td>
+      </tr>
+          <tr>
+        <td class="type">array&nbsp;&nbsp;</td>
+        <td><b>$tpl_depth</b>&nbsp;&nbsp;</td>
+        <td>A reference to the current template structure depth</td>
+      </tr>
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><b>$cdata</b>&nbsp;&nbsp;</td>
+        <td>Character data</td>
+      </tr>
+          <tr>
+        <td class="type">&nbsp;&nbsp;</td>
+        <td><b>&$tpl_struct</b>&nbsp;&nbsp;</td>
+        <td></td>
+      </tr>
+          <tr>
+        <td class="type">&nbsp;&nbsp;</td>
+        <td><b>&$tpl_depth</b>&nbsp;&nbsp;</td>
+        <td></td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodclearTemplate"></a>
+	<h3>method clearTemplate <span class="smalllinenumber">[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a1088">1088</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void clearTemplate(
+[string
+$name = ''])</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Clear template variables and parsed contents of a template<br /><br /><p>Clear template variables and parsed contents of a template</p><br /><br /><br />
+
+	
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><b>$name</b>&nbsp;&nbsp;</td>
+        <td>Template name</td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methoddisplayParsedTemplate"></a>
+	<h3>method displayParsedTemplate <span class="smalllinenumber">[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a1079">1079</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void displayParsedTemplate(
+[string
+$name = ''])</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Display parsed template.<br /><br /><p>Display parsed template. If the template is not parsed yet, then it will be parsed.</p><br /><br /><br />
+
+	
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><b>$name</b>&nbsp;&nbsp;</td>
+        <td>Template name</td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodendElement"></a>
+	<h3>method endElement <span class="smalllinenumber">[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a694">694</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>boolean endElement(
+
+&$tpl_struct, 
+&$tpl_depth, string
+$name, array
+$tpl_struct, array
+$tpl_depth)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		End element handler<br /><br /><p>End element handler</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>return:</b>&nbsp;&nbsp;</td><td>TRUE on success or FALSE on error</td>
+  </tr>
+</table>
+</div>
+<br /><br />
+
+	
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">array&nbsp;&nbsp;</td>
+        <td><b>$tpl_struct</b>&nbsp;&nbsp;</td>
+        <td>A reference to the template structure array</td>
+      </tr>
+          <tr>
+        <td class="type">array&nbsp;&nbsp;</td>
+        <td><b>$tpl_depth</b>&nbsp;&nbsp;</td>
+        <td>A reference to the current template structure depth</td>
+      </tr>
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><b>$name</b>&nbsp;&nbsp;</td>
+        <td>Element name</td>
+      </tr>
+          <tr>
+        <td class="type">&nbsp;&nbsp;</td>
+        <td><b>&$tpl_struct</b>&nbsp;&nbsp;</td>
+        <td></td>
+      </tr>
+          <tr>
+        <td class="type">&nbsp;&nbsp;</td>
+        <td><b>&$tpl_depth</b>&nbsp;&nbsp;</td>
+        <td></td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodgetFileContents"></a>
+	<h3>method getFileContents <span class="smalllinenumber">[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a284">284</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>mixed getFileContents(
+[string
+$file = ''])</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Read file into a string<br /><br /><p>Read file into a string</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>return:</b>&nbsp;&nbsp;</td><td>(string) File contents on success or (boolean) FALSE on error</td>
+  </tr>
+</table>
+</div>
+<br /><br />
+
+	
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><b>$file</b>&nbsp;&nbsp;</td>
+        <td>File name (relative to the base directory)</td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodgetLastError"></a>
+	<h3>method getLastError <span class="smalllinenumber">[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a217">217</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>string getLastError(
+)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Get last raised error description<br /><br /><p>Get last raised error description</p><br /><br /><br />
+
+	
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodgetLastFileData"></a>
+	<h3>method getLastFileData <span class="smalllinenumber">[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a780">780</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void getLastFileData(
+
+&$filename, 
+&$offset, string
+$filename, array
+$offset)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		returns name and byte offset of the current opened file<br /><br /><p>returns name and byte offset of the current opened file</p><br /><br /><br />
+
+	
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><b>$filename</b>&nbsp;&nbsp;</td>
+        <td>A reference to the variable where file name will be stored</td>
+      </tr>
+          <tr>
+        <td class="type">array&nbsp;&nbsp;</td>
+        <td><b>$offset</b>&nbsp;&nbsp;</td>
+        <td>A reference to the variable where byte offset will be stored</td>
+      </tr>
+          <tr>
+        <td class="type">&nbsp;&nbsp;</td>
+        <td><b>&$filename</b>&nbsp;&nbsp;</td>
+        <td></td>
+      </tr>
+          <tr>
+        <td class="type">&nbsp;&nbsp;</td>
+        <td><b>&$offset</b>&nbsp;&nbsp;</td>
+        <td></td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodgetLineNumber"></a>
+	<h3>method getLineNumber <span class="smalllinenumber">[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a824">824</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>int getLineNumber(
+[string
+$filename = ''], [int
+$char = 0])</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Get number of line at which the character with specified offset is located<br /><br /><p>Get number of line at which the character with specified offset is located</p><br /><br /><br />
+
+	
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><b>$filename</b>&nbsp;&nbsp;</td>
+        <td>File name to search in</td>
+      </tr>
+          <tr>
+        <td class="type">int&nbsp;&nbsp;</td>
+        <td><b>$char</b>&nbsp;&nbsp;</td>
+        <td>Character offset</td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodgetParsedTemplate"></a>
+	<h3>method getParsedTemplate <span class="smalllinenumber">[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a918">918</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>string getParsedTemplate(
+[string
+$name = ''])</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Parse template (if not parsed yet) and return it's parsed contents as string<br /><br /><p>Parse template (if not parsed yet) and return it's parsed contents as string</p><br /><br /><br />
+
+	
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><b>$name</b>&nbsp;&nbsp;</td>
+        <td>Template name</td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodmakeRefs"></a>
+	<h3>method makeRefs <span class="smalllinenumber">[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a795">795</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void makeRefs(
+array
+&$root, [
+$parent_tpl_name = ''])</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Create new name reference arrays<br /><br /><p>Create new name reference arrays</p><br /><br /><br />
+
+	
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">array&nbsp;&nbsp;</td>
+        <td><b>&$root</b>&nbsp;&nbsp;</td>
+        <td>Element to start with</td>
+      </tr>
+          <tr>
+        <td class="type">&nbsp;&nbsp;</td>
+        <td><b>$parent_tpl_name</b>&nbsp;&nbsp;</td>
+        <td></td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodparseIntoString"></a>
+	<h3>method parseIntoString <span class="smalllinenumber">[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a944">944</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>string parseIntoString(
+array
+$tpl, array
+$vars)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Parse template structure and return it's parsed contents as a string<br /><br /><p>Parse template structure and return it's parsed contents as a string</p><br /><br /><br />
+
+	
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">array&nbsp;&nbsp;</td>
+        <td><b>$tpl</b>&nbsp;&nbsp;</td>
+        <td>Template record</td>
+      </tr>
+          <tr>
+        <td class="type">array&nbsp;&nbsp;</td>
+        <td><b>$vars</b>&nbsp;&nbsp;</td>
+        <td>Template variables</td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodparseIntoStruct"></a>
+	<h3>method parseIntoStruct <span class="smalllinenumber">[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a347">347</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>boolean parseIntoStruct(
+
+&$tpl_struct, 
+&$tpl_depth, 
+&$cdata_prefix, 
+&$cdata_postfix, 
+&$tpl, array
+$tpl_struct, array
+$tpl_depth, array
+$cdata_prefix, array
+$cdata_postfix, string
+$tpl)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Parse template string into the internal structure<br /><br /><p>Parse template string into the internal structure</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>return:</b>&nbsp;&nbsp;</td><td>TRUE on success or FALSE on error</td>
+  </tr>
+</table>
+</div>
+<br /><br />
+
+	
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">array&nbsp;&nbsp;</td>
+        <td><b>$tpl_struct</b>&nbsp;&nbsp;</td>
+        <td>A reference to the template structure array</td>
+      </tr>
+          <tr>
+        <td class="type">array&nbsp;&nbsp;</td>
+        <td><b>$tpl_depth</b>&nbsp;&nbsp;</td>
+        <td>A reference to the current template structure depth</td>
+      </tr>
+          <tr>
+        <td class="type">array&nbsp;&nbsp;</td>
+        <td><b>$cdata_prefix</b>&nbsp;&nbsp;</td>
+        <td>A reference to the variable where CDATA between offset 0                                    and first element will be stored</td>
+      </tr>
+          <tr>
+        <td class="type">array&nbsp;&nbsp;</td>
+        <td><b>$cdata_postfix</b>&nbsp;&nbsp;</td>
+        <td>A reference to the variable where CDATA between last element                                    and end of the file will be stored</td>
+      </tr>
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><b>$tpl</b>&nbsp;&nbsp;</td>
+        <td>A reference to the template string</td>
+      </tr>
+          <tr>
+        <td class="type">&nbsp;&nbsp;</td>
+        <td><b>&$tpl_struct</b>&nbsp;&nbsp;</td>
+        <td></td>
+      </tr>
+          <tr>
+        <td class="type">&nbsp;&nbsp;</td>
+        <td><b>&$tpl_depth</b>&nbsp;&nbsp;</td>
+        <td></td>
+      </tr>
+          <tr>
+        <td class="type">&nbsp;&nbsp;</td>
+        <td><b>&$cdata_prefix</b>&nbsp;&nbsp;</td>
+        <td></td>
+      </tr>
+          <tr>
+        <td class="type">&nbsp;&nbsp;</td>
+        <td><b>&$cdata_postfix</b>&nbsp;&nbsp;</td>
+        <td></td>
+      </tr>
+          <tr>
+        <td class="type">&nbsp;&nbsp;</td>
+        <td><b>&$tpl</b>&nbsp;&nbsp;</td>
+        <td></td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodparseTemplate"></a>
+	<h3>method parseTemplate <span class="smalllinenumber">[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a901">901</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void parseTemplate(
+[string
+$name = ''], [string
+$mode = PCPIN_TPL_DEFAULT_PARSE_MODE])</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Parse template<br /><br /><p>Parse template</p><br /><br /><br />
+
+	
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><b>$name</b>&nbsp;&nbsp;</td>
+        <td>Template name</td>
+      </tr>
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><b>$mode</b>&nbsp;&nbsp;</td>
+        <td>Parse mode</td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodpassVars"></a>
+	<h3>method passVars <span class="smalllinenumber">[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a1038">1038</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>string passVars(
+[string
+$parsed = ''], [array
+$vars = null])</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Pass variables to the parsed template string.<br /><br /><p>Pass variables to the parsed template string. Global variables will be passed too.</p><br /><br /><br />
+
+	
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><b>$parsed</b>&nbsp;&nbsp;</td>
+        <td>Parsed template string</td>
+      </tr>
+          <tr>
+        <td class="type">array&nbsp;&nbsp;</td>
+        <td><b>$vars</b>&nbsp;&nbsp;</td>
+        <td>Variables to pass</td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodreadTemplatesFromFile"></a>
+	<h3>method readTemplatesFromFile <span class="smalllinenumber">[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a257">257</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>boolean readTemplatesFromFile(
+[string
+$file = ''])</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Read template file and parses contained templates<br /><br /><p>Read template file and parses contained templates</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>return:</b>&nbsp;&nbsp;</td><td>TRUE on success or FALSE on error</td>
+  </tr>
+</table>
+</div>
+<br /><br />
+
+	
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><b>$file</b>&nbsp;&nbsp;</td>
+        <td>File name (relative to the base directory)</td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodresetTpl"></a>
+	<h3>method resetTpl <span class="smalllinenumber">[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a190">190</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void resetTpl(
+)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Reset template structure<br /><br /><p>Reset template structure</p><br /><br /><br />
+
+	
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodsetBasedir"></a>
+	<h3>method setBasedir <span class="smalllinenumber">[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a227">227</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>boolean setBasedir(
+[string
+$dir = ''])</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Set new base directory<br /><br /><p>Set new base directory</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>return:</b>&nbsp;&nbsp;</td><td>TRUE, if directory exists and readable, otherwize FALSE</td>
+  </tr>
+</table>
+</div>
+<br /><br />
+
+	
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><b>$dir</b>&nbsp;&nbsp;</td>
+        <td>Base directory</td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodsetError"></a>
+	<h3>method setError <span class="smalllinenumber">[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a208">208</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>void setError(
+[string
+$errortext = ''])</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Set error status<br /><br /><p>Set error status</p><br /><br /><br />
+
+	
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><b>$errortext</b>&nbsp;&nbsp;</td>
+        <td>Error text</td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+  <hr />
+	<a name="methodstartElement"></a>
+	<h3>method startElement <span class="smalllinenumber">[line <a href="../__filesource/fsource_PcpinTpl__pcpintpl.class.php.html#a497">497</a>]</span></h3>
+	<div class="function">
+    <table width="90%" border="0" cellspacing="0" cellpadding="1"><tr><td class="code_border">
+    <table width="100%" border="0" cellspacing="0" cellpadding="2"><tr><td class="code">
+		<code>boolean startElement(
+
+&$tpl_struct, 
+&$tpl_depth, string
+$name, array
+$attrs, array
+$tpl_struct, array
+$tpl_depth)</code>
+    </td></tr></table>
+    </td></tr></table><br />
+	
+		Start element handler<br /><br /><p>Start element handler</p><br /><br /><br />
+<h4>Tags:</h4>
+<div class="tags">
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><b>return:</b>&nbsp;&nbsp;</td><td>TRUE on success or FALSE on error</td>
+  </tr>
+</table>
+</div>
+<br /><br />
+
+	
+        <h4>Parameters:</h4>
+    <div class="tags">
+    <table border="0" cellspacing="0" cellpadding="0">
+          <tr>
+        <td class="type">array&nbsp;&nbsp;</td>
+        <td><b>$tpl_struct</b>&nbsp;&nbsp;</td>
+        <td>A reference to the template structure array</td>
+      </tr>
+          <tr>
+        <td class="type">array&nbsp;&nbsp;</td>
+        <td><b>$tpl_depth</b>&nbsp;&nbsp;</td>
+        <td>A reference to the current template structure depth</td>
+      </tr>
+          <tr>
+        <td class="type">string&nbsp;&nbsp;</td>
+        <td><b>$name</b>&nbsp;&nbsp;</td>
+        <td>Element name</td>
+      </tr>
+          <tr>
+        <td class="type">array&nbsp;&nbsp;</td>
+        <td><b>$attrs</b>&nbsp;&nbsp;</td>
+        <td>Element attributes</td>
+      </tr>
+          <tr>
+        <td class="type">&nbsp;&nbsp;</td>
+        <td><b>&$tpl_struct</b>&nbsp;&nbsp;</td>
+        <td></td>
+      </tr>
+          <tr>
+        <td class="type">&nbsp;&nbsp;</td>
+        <td><b>&$tpl_depth</b>&nbsp;&nbsp;</td>
+        <td></td>
+      </tr>
+        </table>
+    </div><br />
+        <div class="top">[ <a href="#top">Top</a> ]</div>
+  </div>
+</div><br />
+
+
+        <div class="credit">
+		    <hr />
+		    Documentation generated on Sun, 12 Aug 2007 16:53:48 +0200 by <a href="http://www.phpdoc.org">phpDocumentor 1.4.0a2</a>
+	      </div>
+      </td></tr></table>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>
