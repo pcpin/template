@@ -51,9 +51,7 @@ Documentation
 -------------
 
 Documentation as HTML and PDF is included into this package.
-Documentation is also available online at:
-[HTML]	http://www.pcpin.com/docs/pcpin_template/index.html
-[PDF]	http://www.pcpin.com/docs/pcpin_template/pcpin_template_doc_0.01-rc1.pdf
+Documentation is also available online at: http://www.pcpin.com/docs/pcpin_template/index.html
 
 
 License
