@@ -81,7 +81,7 @@ define('PCPIN_TPL_TRIM_ROOT', true);
 /**
  * PCPIN template elements namespace full description
  */
-define('PCPIN_TPL_FULL_NS', (PCPIN_TPL_NS!='')? (PCPIN_TPL_NS.':') : '');
+define('PCPIN_TPL_FULL_NS', PCPIN_TPL_NS!=''? PCPIN_TPL_NS.':' : '');
 
 
 /**
@@ -100,19 +100,19 @@ class PcpinTpl {
    * The directory where the template files are stored
    * @var   string
    */
-  var $basedir='';
+  var $basedir='.';
 
   /**
    * Array with opened files' description (name=>byte_offset)
    * @var   array
    */
-  var $files=null;
+  var $files=array();
 
   /**
    * Template structure
    * @var   array
    */
-  var $tpl_struct=null;
+  var $tpl_struct=array();
 
   /**
    * Template structure current depth
@@ -126,14 +126,14 @@ class PcpinTpl {
    * NOTE: if there are multiple templates with the same, then only the last template will be referenced
    * @var   array
    */
-  var $tpl_name_ref=null;
+  var $tpl_name_ref=array();
 
   /**
    * Array with references to the subtemplates.
    * The subtemplates are referenced by the value of an attribute "name" of their parent template.
    * @var   array
    */
-  var $sub_name_ref=null;
+  var $sub_name_ref=array();
 
   /**
    * Parsed template contents
@@ -141,7 +141,7 @@ class PcpinTpl {
    * NOTE: if there are multiple templates with the same, then only the last template will be referenced
    * @var   array
    */
-  var $parsed_name_ref=null;
+  var $parsed_name_ref=array();
 
   /**
    * Parsed template flags (true, if the template is parsed)
@@ -149,26 +149,26 @@ class PcpinTpl {
    * NOTE: if there are multiple templates with the same, then only the last template will be referenced
    * @var   array
    */
-  var $parsed_name_flags=null;
+  var $parsed_name_flags=array();
 
   /**
    * Template variables referenced by the template name.
    * @var   array
    */
-  var $tpl_vars=null;
+  var $tpl_vars=array();
 
   /**
    * All variable names used in all loaded templates
    * @var   array
    */
-  var $tpl_vars_plain=null;
+  var $tpl_vars_plain=array();
 
   /**
    * Global variables.
    * These variables are overrided by template variables with the same name.
    * @var   array
    */
-  var $global_vars=null;
+  var $global_vars=array();
 
 
 
@@ -178,27 +178,7 @@ class PcpinTpl {
   /**
    * Constructor
    */
-  function PcpinTpl() {
-    // Reset template structure
-    $this->resetTpl();
-  }
-
-
-  /**
-   * Reset template structure
-   */
-  function resetTpl() {
-    $this->tpl_struct=array();
-    $this->tpl_depth=0;
-    $this->files=array();
-    $this->tpl_name_ref=array();
-    $this->sub_name_ref=array();
-    $this->parsed_name_ref=array();
-    $this->parsed_name_flags=array();
-    $this->tpl_vars=array();
-    $this->tpl_vars_plain=array();
-    $this->global_vars=array();
-  }
+  function PcpinTpl() { }
 
 
   /**
@@ -224,7 +204,7 @@ class PcpinTpl {
    * @param   string    $dir    Base directory
    * @return  boolean   TRUE, if directory exists and readable, otherwize FALSE
    */
-  function setBasedir($dir='') {
+  function setBasedir($dir='.') {
     $result=false;
     // Reset error status
     $this->setError();
@@ -254,7 +234,7 @@ class PcpinTpl {
    * @param   string    $file   File name (relative to the base directory)
    * @return  boolean   TRUE on success or FALSE on error
    */
-  function readTemplatesFromFile($file='') {
+  function readTemplatesFromFile($file) {
     $result=false;
     // Reset error status
     $this->setError();
@@ -265,11 +245,11 @@ class PcpinTpl {
       $cdata_postfix='';
       if (false===$result=$this->parseIntoStruct($this->tpl_struct, $this->tpl_depth, $cdata_prefix, $cdata_postfix, $tpl)) {
         // Template parser error
-        echo htmlentities($this->getLastError());
+        echo htmlspecialchars($this->getLastError());
         die();
       }
       // Create new reference arrays
-      $this->makeRefs($this->tpl_struct, '');
+      $this->makeRefs($this->tpl_struct);
       array_pop($this->files);
     }
     return $result;
@@ -295,10 +275,10 @@ class PcpinTpl {
     } elseif (!file_exists($fn)) {
       // File does not exists
       $this->setError('Could not open file "'.$this->basedir.'/'.$file.'" for reading: file does not exists');
-    }else if (!is_file($fn)) {
+    } else if (!is_file($fn)) {
       // Specified resource is not a file
       $this->setError('Could not open file "'.$fn.'" for reading: it is not a file');
-    }else if (!is_readable($fn)) {
+    } else if (!is_readable($fn)) {
       // File not readable
       $this->setError('Could not open file "'.$fn.'" for reading: file is not readable');
     } else {
@@ -308,7 +288,7 @@ class PcpinTpl {
       if (!empty($this->files)) {
         $tmp=$this->files;
         foreach ($tmp as $frec) {
-          list($name,)=each($frec);
+          $name=key($frec);
           if ($name==$fn) {
             // File has already been opened
             $this->getLastFileData($fn_old, $offset);
@@ -349,9 +329,8 @@ class PcpinTpl {
     $this->setError();
     $result=false;
     if ($tpl!='') {
-      $ns=((PCPIN_TPL_NS!='')? PCPIN_TPL_NS.':' : '');
       // REGEX pattern for matching PCPIN template tags
-      $tag_pattern='/(<([ ])*'.$ns.'([A-Za-z0-9_])+([ ])*(([ ])+([A-Za-z0-9_]+)([ ])*=([ ])*"[^"]*"([ ])*([\/])?([ ])*)*>)|(<([ ])*[\/]([ ])*'.$ns.'([A-Za-z0-9_])+([ ])*>)/';
+      $tag_pattern='/(<([ ])*'.PCPIN_TPL_FULL_NS.'([A-Za-z0-9_])+([ ])*(([ ])+([A-Za-z0-9_]+)([ ])*=([ ])*"[^"]*"([ ])*([\/])?([ ])*)*>)|(<([ ])*[\/]([ ])*'.PCPIN_TPL_FULL_NS.'([A-Za-z0-9_])+([ ])*>)/';
       // Parse tags
       if (false===preg_match_all($tag_pattern, $tpl, $matches, PREG_PATTERN_ORDER|PREG_OFFSET_CAPTURE)) {
         // An unknown error occured
@@ -379,13 +358,13 @@ class PcpinTpl {
               $cdata_prefix=substr($tpl, 0, $offset);
             }
             $thisfiles=array_pop($this->files);
-            list($fn,)=each($thisfiles);
+            $fn=key($thisfiles);
             array_push($this->files, array($fn=>$offset));
             // Get first CDATA borders
             $cdata_start=$offset+strlen($match_0);
             $cdata_end=isset($matches[$i+1])? $matches[$i+1][1] : $cdata_start;
             // Prepare string
-            $match_0=trim(ltrim(rtrim(str_replace($ns, '', $match_0), '>'), '<'));
+            $match_0=trim(ltrim(rtrim(str_replace(PCPIN_TPL_FULL_NS, '', $match_0), '>'), '<'));
             // Which tag? (opening|closing|closed)
             $slashpos=strpos($match_0, '/');
             if (false===$slashpos) {
@@ -434,7 +413,7 @@ class PcpinTpl {
                   }
                 }
               }
-            }else if ($tag_type==1) {
+            } else if ($tag_type==1) {
               // Closed tag (both start and end elements)
               // Call start and end element handlers
               if (false===$result=$this->startElement($tpl_struct, $tpl_depth, $name, $attrs) && $this->endElement($tpl_struct, $tpl_depth, $name)) {
@@ -474,7 +453,7 @@ class PcpinTpl {
           if ($result===true && $tpl_depth!=0) {
             // Error: tag is still open at the end of file
             $this->getLastFileData($fn, $offset);
-            $this->setError('Error in file "'.$fn.'": element "<'.$ns.$tpl_struct[$tpl_depth-1]['name'].'>" is still open at the end of file');
+            $this->setError('Error in file "'.$fn.'": element "<'.PCPIN_TPL_FULL_NS.$tpl_struct[$tpl_depth-1]['name'].'>" is still open at the end of file');
             $result=false;
           }
         }
