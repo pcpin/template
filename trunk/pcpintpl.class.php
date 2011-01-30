@@ -177,34 +177,38 @@ class PcpinTpl {
 
   /**
    * Constructor
+   * @access public
    */
-  function PcpinTpl() { }
+  public function PcpinTpl() { }
 
 
   /**
    * Set error status
+   * @access private
    * @param   string    $errortext    Error text
    */
-  function setError($errortext='') {
+  private function setError($errortext='') {
     $this->last_error=$errortext;
   }
 
 
   /**
    * Get last raised error description
+   * @access public
    * @return  string
    */
-  function getLastError() {
+  public function getLastError() {
     return $this->last_error;
   }
 
 
   /**
    * Set new base directory
+   * @access public
    * @param   string    $dir    Base directory
    * @return  boolean   TRUE, if directory exists and readable, otherwize FALSE
    */
-  function setBasedir($dir='.') {
+  public function setBasedir($dir='.') {
     $result=false;
     // Reset error status
     $this->setError();
@@ -231,10 +235,11 @@ class PcpinTpl {
 
   /**
    * Read template file and parses contained templates
+   * @access public
    * @param   string    $file   File name (relative to the base directory)
    * @return  boolean   TRUE on success or FALSE on error
    */
-  function readTemplatesFromFile($file) {
+  public function readTemplatesFromFile($file) {
     $result=false;
     // Reset error status
     $this->setError();
@@ -258,10 +263,11 @@ class PcpinTpl {
 
   /**
    * Read file into a string
+   * @access private
    * @param   string    $file   File name (relative to the base directory)
    * @return  mixed   (string) File contents on success or (boolean) FALSE on error
    */
-  function getFileContents($file='') {
+  private function getFileContents($file='') {
     $result=false;
     // Reset error status
     $this->setError();
@@ -315,6 +321,7 @@ class PcpinTpl {
 
   /**
    * Parse template string into the internal structure
+   * @access private
    * @param   array     $tpl_struct     A reference to the template structure array
    * @param   array     $tpl_depth      A reference to the current template structure depth
    * @param   array     $cdata_prefix   A reference to the variable where CDATA between offset 0
@@ -324,7 +331,7 @@ class PcpinTpl {
    * @param   string    $tpl            A reference to the template string
    * @return  boolean   TRUE on success or FALSE on error
    */
-  function parseIntoStruct(&$tpl_struct, &$tpl_depth, &$cdata_prefix, &$cdata_postfix, &$tpl) {
+  private function parseIntoStruct(&$tpl_struct, &$tpl_depth, &$cdata_prefix, &$cdata_postfix, &$tpl) {
     // Reset error status
     $this->setError();
     $result=false;
@@ -467,13 +474,14 @@ class PcpinTpl {
 
   /**
    * Start element handler
+   * @access private
    * @param   array     $tpl_struct     A reference to the template structure array
    * @param   array     $tpl_depth      A reference to the current template structure depth
    * @param   string    $name           Element name
    * @param   array     $attrs          Element attributes
    * @return  boolean   TRUE on success or FALSE on error
    */
-  function startElement(&$tpl_struct, &$tpl_depth, $name, $attrs) {
+  private function startElement(&$tpl_struct, &$tpl_depth, $name, $attrs) {
     $result=false;
     if ($tpl_depth==0 && !empty($tpl_struct)) {
       // More than one root element detected
@@ -639,12 +647,13 @@ class PcpinTpl {
 
   /**
    * Characted data handler
+   * @access private
    * @param   array     $tpl_struct     A reference to the template structure array
    * @param   array     $tpl_depth      A reference to the current template structure depth
    * @param   string    $cdata          Character data
    * @return  boolean   TRUE on success or FALSE on error
    */
-  function characterData(&$tpl_struct, &$tpl_depth, $cdata='') {
+  private function characterData(&$tpl_struct, &$tpl_depth, $cdata='') {
     $result=false;
     $tpl_depth_dec=$tpl_depth-1;
     if (!empty($tpl_depth) && $tpl_struct[$tpl_depth_dec]['template_type']=='condition' && trim($cdata)!='') {
@@ -665,12 +674,13 @@ class PcpinTpl {
 
   /**
    * End element handler
+   * @access private
    * @param   array     $tpl_struct     A reference to the template structure array
    * @param   array     $tpl_depth      A reference to the current template structure depth
    * @param   string    $name           Element name
    * @return  boolean   TRUE on success or FALSE on error
    */
-  function endElement(&$tpl_struct, &$tpl_depth, $name) {
+  private function endElement(&$tpl_struct, &$tpl_depth, $name) {
     $result=false;
     $hierarchy_error=false;
     if (!isset($tpl_struct[0])) {
@@ -752,11 +762,12 @@ class PcpinTpl {
 
 
   /**
-   * returns name and byte offset of the current opened file
+   * Returns name and byte offset of the current opened file
+   * @access private
    * @param   string    $filename   A reference to the variable where file name will be stored
    * @param   array     $offset     A reference to the variable where byte offset will be stored
    */
-  function getLastFileData(&$filename, &$offset) {
+  private function getLastFileData(&$filename, &$offset) {
     if (!empty($this->files)) {
       $tmp=$this->files;
       list($filename, $offset)=each(end($tmp));
@@ -769,9 +780,10 @@ class PcpinTpl {
 
   /**
    * Create new name reference arrays
+   * @access private
    * @param   array   Element to start with
    */
-  function makeRefs(&$root, $parent_tpl_name='') {
+  private function makeRefs(&$root, $parent_tpl_name='') {
     if (!empty($root) && is_array($root)) {
       if ($root['name']==PCPIN_TPL_NAME_SUB) {
         // Element is a subtemplate
@@ -796,11 +808,12 @@ class PcpinTpl {
 
   /**
    * Get number of line at which the character with specified offset is located
+   * @access private
    * @param   string    $filename   File name to search in
    * @param   int       $char       Character offset
    * @return  int
    */
-  function getLineNumber($filename='', $char=0) {
+  private function getLineNumber($filename='', $char=0) {
     $result=0;
     if (false!==$h=file($filename)) {
       $i=0;
@@ -818,11 +831,12 @@ class PcpinTpl {
 
   /**
    * Add a variable to the template
+   * @access public
    * @param   string    $template   Template name
    * @param   string    $var_name   Variable name
    * @param   mixed     $var_val    Variable value
    */
-  function addVar($template='', $var_name='', $var_val=null) {
+  public function addVar($template='', $var_name='', $var_val=null) {
     $var_name=strtoupper(trim($var_name));
     if ($var_name!='' && isset($this->tpl_vars[$template]) && array_key_exists($var_name, $this->tpl_vars[$template])) {
       $this->tpl_vars[$template][$var_name]=$var_val;
@@ -831,12 +845,13 @@ class PcpinTpl {
 
 
   /**
-   * Add multiple variables to the template.
+   * Add multiple variables to the template
+   * @access public
    * The $vars array elements have variable name as KEY and it's value as VAL (KEY=>VAL)
    * @param   string    $template   Template name
    * @param   array     $vars       Variables to add
    */
-  function addVars($template='', $vars=null) {
+  public function addVars($template='', $vars=null) {
     if (!empty($vars) && is_array($vars)) {
       foreach ($vars as $key=>$val) {
         $this->addVar($template, $key, $val);
@@ -847,10 +862,11 @@ class PcpinTpl {
 
   /**
    * Add a global variable
+   * @access public
    * @param   string    $var_name   Variable name
    * @param   mixed     $var_val    Variable value
    */
-  function addGlobalVar($var_name='', $var_val=null) {
+  public function addGlobalVar($var_name='', $var_val=null) {
     $var_name=strtoupper(trim($var_name));
     if ($var_name!='') {
       $this->global_vars[$var_name]=$var_val;
@@ -860,10 +876,11 @@ class PcpinTpl {
 
   /**
    * Add multiple global variables
+   * @access public
    * The $vars array elements have variable name as KEY and it's value as VAL (KEY=>VAL)
    * @param   array     $vars       Variables to add
    */
-  function addGlobalVars($vars=null) {
+  public function addGlobalVars($vars=null) {
     if (!empty($vars) && is_array($vars)) {
       foreach ($vars as $key=>$val) {
         $this->addGlobalVar($key, $val);
@@ -874,10 +891,11 @@ class PcpinTpl {
 
   /**
    * Parse template
+   * @access public
    * @param   string    $name     Template name
    * @param   string    $mode     Parse mode
    */
-  function parseTemplate($name='', $mode=PCPIN_TPL_DEFAULT_PARSE_MODE) {
+  public function parseTemplate($name='', $mode=PCPIN_TPL_DEFAULT_PARSE_MODE) {
     if ($name!='' && isset($this->tpl_name_ref[$name])) {
       $this->parsed_name_flags[$name]=true;
       if ($mode==PCPIN_TPL_PARSE_MODE_OVERWRITE) {
@@ -891,10 +909,11 @@ class PcpinTpl {
 
   /**
    * Parse template (if not parsed yet) and return it's parsed contents as string
+   * @access public
    * @param   string    $name     Template name
    * @return  string
    */
-  function getParsedTemplate($name='') {
+  public function getParsedTemplate($name='') {
     $result='';
     if ($name=='') {
       if (isset($this->tpl_struct['attrs'])) {
@@ -916,11 +935,12 @@ class PcpinTpl {
 
   /**
    * Parse template structure and return it's parsed contents as a string
+   * @access public
    * @param   array     $tpl          Template record
    * @param   array     $vars         Template variables
    * @return  string
    */
-  function parseIntoString($tpl, $vars) {
+  public function parseIntoString($tpl, $vars) {
     $parsed_string='';
     if (is_array($tpl) && !empty($tpl)) {
       $child_key=-1;
@@ -993,7 +1013,7 @@ class PcpinTpl {
               if ($type==1) {
                 // A CDATA
                 // Pass variables and store.
-                $parsed_string.=$this->passVars($tpl['children'][$key], $vars);
+                $parsed_string.=$this->pasteVars($tpl['children'][$key], $vars);
               } elseif ($type==0) {
                 // A template
                 $parsed_string.=$this->getParsedTemplate($tpl['children'][$key]['attrs']['name']);
@@ -1008,13 +1028,13 @@ class PcpinTpl {
 
 
   /**
-   * Pass variables to the parsed template string.
-   * Global variables will be passed too.
+   * Paste variables to the parsed template string. Global variables will be pasted as well.
+   * @access private
    * @param   string    $parsed   Parsed template string
-   * @param   array     $vars     Variables to pass
+   * @param   array     $vars     Variables
    * @return  string
    */
-  function passVars($parsed='', $vars=null) {
+  private function pasteVars($parsed='', $vars=null) {
     if ($parsed!='' && !empty($vars) && is_array($vars)) {
       // Replace '{' characters in the values in order to avoid wrong name-value replacements
       $replacement=chr(0).'pcpin'.chr(0);
@@ -1053,18 +1073,20 @@ class PcpinTpl {
 
   /**
    * Display parsed template. If the template is not parsed yet, then it will be parsed.
+   * @access public
    * @param   string    $name     Template name
    */
-  function displayParsedTemplate($name='') {
+  public function displayParsedTemplate($name='') {
     echo $this->getParsedTemplate($name);
   }
 
 
   /**
    * Clear template variables and parsed contents of a template
+   * @access public
    * @param   string    $name     Template name
    */
-  function clearTemplate($name='') {
+  public function clearTemplate($name='') {
     if ($name=='') {
       if (isset($this->tpl_struct['attrs'])) {
         if (isset($this->tpl_struct['attrs']['name'])) {
